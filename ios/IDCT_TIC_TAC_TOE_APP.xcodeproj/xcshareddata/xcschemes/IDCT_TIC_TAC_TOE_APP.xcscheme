@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "IDCT_TIC_TAC_TOE.app"
-               BlueprintName = "IDCT_TIC_TAC_TOE"
-               ReferencedContainer = "container:IDCT_TIC_TAC_TOE.xcodeproj">
+               BuildableName = "IDCT_TIC_TAC_TOE_APP.app"
+               BlueprintName = "IDCT_TIC_TAC_TOE_APP"
+               ReferencedContainer = "container:IDCT_TIC_TAC_TOE_APP.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "IDCT_TIC_TAC_TOETests.xctest"
-               BlueprintName = "IDCT_TIC_TAC_TOETests"
-               ReferencedContainer = "container:IDCT_TIC_TAC_TOE.xcodeproj">
+               BuildableName = "IDCT_TIC_TAC_TOE_APPTests.xctest"
+               BlueprintName = "IDCT_TIC_TAC_TOE_APPTests"
+               ReferencedContainer = "container:IDCT_TIC_TAC_TOE_APP.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "IDCT_TIC_TAC_TOE.app"
-            BlueprintName = "IDCT_TIC_TAC_TOE"
-            ReferencedContainer = "container:IDCT_TIC_TAC_TOE.xcodeproj">
+            BuildableName = "IDCT_TIC_TAC_TOE_APP.app"
+            BlueprintName = "IDCT_TIC_TAC_TOE_APP"
+            ReferencedContainer = "container:IDCT_TIC_TAC_TOE_APP.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "IDCT_TIC_TAC_TOE.app"
-            BlueprintName = "IDCT_TIC_TAC_TOE"
-            ReferencedContainer = "container:IDCT_TIC_TAC_TOE.xcodeproj">
+            BuildableName = "IDCT_TIC_TAC_TOE_APP.app"
+            BlueprintName = "IDCT_TIC_TAC_TOE_APP"
+            ReferencedContainer = "container:IDCT_TIC_TAC_TOE_APP.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

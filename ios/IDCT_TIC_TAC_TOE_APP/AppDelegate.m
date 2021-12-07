@@ -33,7 +33,7 @@ static void InitializeFlipper(UIApplication *application) {
 
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
-                                                   moduleName:@"IDCT_TIC_TAC_TOE"
+                                                   moduleName:@"IDCT_TIC_TAC_TOE_APP"
                                             initialProperties:nil];
 
   if (@available(iOS 13.0, *)) {

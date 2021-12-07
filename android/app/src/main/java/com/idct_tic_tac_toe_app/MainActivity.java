@@ -1,4 +1,4 @@
-package com.idct_tic_tac_toe;
+package com.idct_tic_tac_toe_app;
 
 import com.facebook.react.ReactActivity;
 
@@ -10,6 +10,6 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "IDCT_TIC_TAC_TOE";
+    return "IDCT_TIC_TAC_TOE_APP";
   }
 }
