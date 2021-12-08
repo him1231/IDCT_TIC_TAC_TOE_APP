@@ -1,6 +1,7 @@
 import {NavigationProp, useNavigation} from '@react-navigation/core';
 import React from 'react';
 import {Button, StyleSheet, Text, TextInput, View} from 'react-native';
+import Divider from '../component/Divider';
 import Separator from '../component/Separator';
 import {RootStackParamList} from '../navigator/RootStack';
 
@@ -9,6 +10,10 @@ const LoginPage = () => {
 
   const onPressLogin = () => {
     navigation.navigate('Landing');
+  };
+
+  const onPressSignUp = () => {
+    navigation.navigate('SignUp');
   };
 
   return (
@@ -22,8 +27,10 @@ const LoginPage = () => {
         textContentType="password"
         secureTextEntry={true}
       />
-      <Separator size={40} />
+      <Separator size={50} />
       <Button title="Login" onPress={onPressLogin} />
+      <Divider width={80} marginVertical={5} />
+      <Button title="SignUp" onPress={onPressSignUp} />
     </View>
   );
 };
