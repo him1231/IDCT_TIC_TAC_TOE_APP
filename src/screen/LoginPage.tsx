@@ -1,15 +1,29 @@
 import {NavigationProp, useNavigation} from '@react-navigation/core';
-import React from 'react';
-import {Button, StyleSheet, Text, TextInput, View} from 'react-native';
+import React, {useState} from 'react';
+import {Alert, Button, StyleSheet, Text, TextInput, View} from 'react-native';
+import {login} from '../utils/api';
 import Divider from '../component/Divider';
 import Separator from '../component/Separator';
 import {RootStackParamList} from '../navigator/RootStack';
+import {useDispatch} from 'react-redux';
+import {hideLoading, showLoading} from '../redux/reducers/general';
 
 const LoginPage = () => {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
+  const dispatch = useDispatch();
 
-  const onPressLogin = () => {
-    navigation.navigate('Landing');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const onPressLogin = async () => {
+    dispatch(showLoading());
+    setPassword('');
+    if (await login(username, password)) {
+      navigation.navigate('Landing');
+    } else {
+      Alert.alert('login failed');
+    }
+    dispatch(hideLoading());
   };
 
   const onPressSignUp = () => {
@@ -19,13 +33,19 @@ const LoginPage = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.logo}>#</Text>
-      <TextInput style={styles.textInput} placeholder="User name" />
+      <TextInput
+        style={styles.textInput}
+        placeholder="User name"
+        onChangeText={setUsername}
+      />
       <Separator size={20} />
       <TextInput
         style={styles.textInput}
+        value={password}
         placeholder="Password"
         textContentType="password"
         secureTextEntry={true}
+        onChangeText={setPassword}
       />
       <Separator size={50} />
       <Button title="Login" onPress={onPressLogin} />

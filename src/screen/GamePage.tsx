@@ -1,5 +1,21 @@
-import React, {useState} from 'react';
-import {FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {
+  NavigationProp,
+  RouteProp,
+  useNavigation,
+  useRoute,
+} from '@react-navigation/native';
+import React, {useEffect, useState} from 'react';
+import {
+  Alert,
+  FlatList,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+import Separator from '../component/Separator';
+import {RootStackParamList} from 'src/navigator/RootStack';
+import {leave, room, Room} from '../utils/api';
 
 type state = 'x' | 'o' | '';
 
@@ -56,24 +72,70 @@ const GamePad = () => {
   );
 };
 
-const GameInfo = () => {
-  return <></>;
-};
-
 const GamePage = () => {
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
+  const route = useRoute<RouteProp<RootStackParamList, 'Game'>>();
+  const [roomData, setRoomData] = useState(route.params.room);
+  console.log('roomData', roomData);
+
+  useEffect(() => {
+    const interval = setInterval(fetchRoom, 1000);
+
+    return () => {
+      leave();
+      clearInterval(interval);
+    };
+  }, []);
+
+  const fetchRoom = async () => {
+    const result = await room();
+    if (result !== undefined) {
+      setRoomData(result);
+    } else {
+      navigation.goBack();
+      Alert.alert('Room Closed');
+    }
+  };
+
+  const GameInfo = () => {
+    return (
+      <View style={styles.gameInfoContainer}>
+        {roomData !== null &&
+          roomData.players !== undefined &&
+          roomData.players.map((player, index) => (
+            <Text key={index}>{`Player${index + 1}: ${player}`}</Text>
+          ))}
+
+        <Separator size={20} />
+        {roomData !== null &&
+          roomData.spectators !== undefined &&
+          Object.keys(roomData.spectators).map((key, index) => (
+            <Text key={index}>{`Spectator${index + 1}: ${key}`}</Text>
+          ))}
+      </View>
+    );
+  };
+
   return (
     <View style={styles.container}>
-      <GameInfo />
       <GamePad />
+      <Separator size={100} />
+      <GameInfo />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
+    padding: 20,
     flex: 1,
     alignItems: 'center',
     backgroundColor: 'white',
+  },
+  gameInfoContainer: {
+    width: '100%',
+    padding: 20,
+    justifyContent: 'flex-start',
   },
   gamePadContainer: {
     height: 300,
