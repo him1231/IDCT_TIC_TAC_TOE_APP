@@ -1,6 +1,6 @@
 import {useNavigation, NavigationProp} from '@react-navigation/core';
 import React from 'react';
-import {FlatList, StyleSheet, TouchableOpacity, View} from 'react-native';
+import {FlatList, StyleSheet, TouchableOpacity} from 'react-native';
 import {Text} from 'react-native-paper';
 import Separator from '../component/Separator';
 import Shadow from '../component/Shadow';

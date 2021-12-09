@@ -1,0 +1,29 @@
+{
+  "extends": [
+    "tslint:recommended",
+    "tslint-config-prettier",
+    "tslint-config-airbnb",
+    "tslint-react"
+  ],
+  "defaultSeverity": "error",
+  "jsRules": {},
+  "rules": {
+    "object-literal-shorthand": false,
+    "object-shorthand-properties-first": false,
+    "import-name": false,
+    "member-access": false,
+    "variable-name": false,
+    "object-literal-sort-keys": false,
+    "align": false,
+    "no-unused-variable": true,
+    "jsx-no-multiline-js": false,
+    "prefer-template": false,
+    "max-line-length": false,
+    "jsx-no-lambda": false,
+    "object-curly-spacing": false
+  },
+  "rulesDirectory": [],
+  "linterOptions": {
+    "exclude": ["src/**/*.tsx.snap"]
+  }
+}

@@ -1,24 +1,23 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import Separator from '../component/Separator';
 
 type state = 'x' | 'o' | '';
 
 interface TicTacToeButtonProps {
   index: number;
-  state: state;
+  buttonState: state;
   onPress?: (_: number) => void;
 }
 
 const TicTacToeButton = (props: TicTacToeButtonProps) => {
-  const {index, state} = props;
+  const {index, buttonState} = props;
 
   const onPress = () => {
     if (props.onPress) props.onPress(index);
   };
   return (
     <TouchableOpacity style={styles.gameButton} onPress={onPress}>
-      <Text style={styles.gameButtonIcon}>{state}</Text>
+      <Text style={styles.gameButtonIcon}>{buttonState}</Text>
     </TouchableOpacity>
   );
 };
@@ -32,11 +31,11 @@ const GamePad = () => {
     setData([...data]);
   };
 
-  const renderItem = ({item, index}: {item: state; index: number}) => {
+  const renderItem = ({index}: {item: state; index: number}) => {
     return (
       <TicTacToeButton
         index={index}
-        state={data[index]}
+        buttonState={data[index]}
         onPress={onButtonPressed}
       />
     );
@@ -64,6 +63,7 @@ const GameInfo = () => {
 const GamePage = () => {
   return (
     <View style={styles.container}>
+      <GameInfo />
       <GamePad />
     </View>
   );

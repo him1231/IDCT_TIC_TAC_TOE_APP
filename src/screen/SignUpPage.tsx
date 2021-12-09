@@ -3,7 +3,9 @@ import {Button, StyleSheet, TextInput, View} from 'react-native';
 import Separator from '../component/Separator';
 
 const SignUpPage = () => {
-  const onPressSignUp = () => {};
+  const onPressSignUp = () => {
+    // console.log('SignUpPage', 'onPressSignUp');
+  };
   return (
     <View style={styles.container}>
       <Separator size={50} />
