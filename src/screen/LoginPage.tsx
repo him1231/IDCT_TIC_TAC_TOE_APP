@@ -34,12 +34,14 @@ const LoginPage = () => {
     <View style={styles.container}>
       <Text style={styles.logo}>#</Text>
       <TextInput
+        placeholderTextColor={'grey'}
         style={styles.textInput}
         placeholder="User name"
         onChangeText={setUsername}
       />
       <Separator size={20} />
       <TextInput
+        placeholderTextColor={'grey'}
         style={styles.textInput}
         value={password}
         placeholder="Password"

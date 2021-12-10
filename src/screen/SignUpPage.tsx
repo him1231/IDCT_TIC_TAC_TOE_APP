@@ -39,12 +39,14 @@ const SignUpPage = () => {
     <View style={styles.container}>
       <Separator size={50} />
       <TextInput
+        placeholderTextColor={'grey'}
         style={styles.textInput}
         placeholder="User name"
         onChangeText={setUsername}
       />
       <Separator size={20} />
       <TextInput
+        placeholderTextColor={'grey'}
         style={styles.textInput}
         placeholder="Password"
         textContentType="password"
@@ -53,6 +55,7 @@ const SignUpPage = () => {
       />
       <Separator size={20} />
       <TextInput
+        placeholderTextColor={'grey'}
         style={styles.textInput}
         placeholder="Confirm Password"
         textContentType="password"

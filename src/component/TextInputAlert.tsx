@@ -61,6 +61,7 @@ const TextInputAlert = (props: Props) => {
         <View style={styles.promptContainer}>
           {title && <Text style={styles.title}>{title}</Text>}
           <TextInput
+            placeholderTextColor={'grey'}
             style={styles.textInput}
             placeholder={placeholder}
             onChangeText={setInput}
