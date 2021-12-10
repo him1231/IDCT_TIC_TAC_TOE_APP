@@ -11,23 +11,22 @@ import {
 const KeyboardBlockWrapper: React.FC = props => {
   const [isKeyboardVisible, setKeyboardVisible] = useState(false);
 
+  const keyboardDidShow = () => setKeyboardVisible(true);
+  const keyboardWillHide = () => setKeyboardVisible(false);
+
   useEffect(() => {
     const keyboardDidShowListener = Keyboard.addListener(
       'keyboardDidShow',
-      () => {
-        setKeyboardVisible(true); // or some other action
-      },
+      keyboardDidShow,
     );
-    const keyboardDidHideListener = Keyboard.addListener(
-      'keyboardDidHide',
-      () => {
-        setKeyboardVisible(false); // or some other action
-      },
+    const keyboardWillHideListener = Keyboard.addListener(
+      'keyboardWillHide',
+      keyboardWillHide,
     );
 
     return () => {
-      keyboardDidHideListener.remove();
       keyboardDidShowListener.remove();
+      keyboardWillHideListener.remove();
     };
   }, []);
 
