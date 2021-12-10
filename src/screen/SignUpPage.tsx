@@ -49,7 +49,6 @@ const SignUpPage = () => {
         placeholderTextColor={'grey'}
         style={styles.textInput}
         placeholder="Password"
-        textContentType="password"
         secureTextEntry={true}
         onChangeText={setPassword}
       />
@@ -58,7 +57,6 @@ const SignUpPage = () => {
         placeholderTextColor={'grey'}
         style={styles.textInput}
         placeholder="Confirm Password"
-        textContentType="password"
         secureTextEntry={true}
         onChangeText={setPassword2}
       />

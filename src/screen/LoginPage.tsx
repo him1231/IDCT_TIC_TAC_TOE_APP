@@ -45,7 +45,6 @@ const LoginPage = () => {
         style={styles.textInput}
         value={password}
         placeholder="Password"
-        textContentType="password"
         secureTextEntry={true}
         onChangeText={setPassword}
       />
